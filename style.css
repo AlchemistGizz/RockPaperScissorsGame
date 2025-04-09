@@ -1,0 +1,226 @@
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(https://64.media.tumblr.com/tumblr_m3onvwQKgo1rqs8i3o1_500.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  font-size: 3rem;
+  color: rgb(31, 2, 2);
+  justify-content: center;
+
+  font-family: "Bungee Spice", sans-serif;
+}
+.choices {
+  margin-bottom: 30px;
+}
+.choices button {
+  font-size: 7.5rem;
+  min-width: 160px;
+  margin: 0 10px;
+  border-radius: 250px;
+  background-color: rgb(7, 13, 94);
+  cursor: pointer;
+  transition: bacground-color 0.5 ease;
+}
+.choices button:hover {
+  background-color: rgb(255, 0, 55);
+}
+#playerDisplay,
+#computerDisplay {
+  font-size: 2.5rem;
+  color: rgb(27, 20, 9);
+  
+}
+#resultDisplay {
+  font-size: 5rem;
+}
+
+.scoreDisplay {
+  font-size: 2rem;
+  font-family: "Cinzel", serif;
+  background: radial-gradient(circle, #f8f69e, #88ade0, #6d6fe6);
+  box-shadow: 0 0 5px rgba(23, 23, 46, 0.6);
+ 
+
+}
+.greenText,
+#playerScoreDisplay {
+  color: hsl(130, 88%, 33%);
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+}
+.reddText,
+#computerScoreDisplay {
+  color: hsl(0, 75%, 54%);
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+}
+
+#resultDisplay {
+  font-size: 5rem;
+  text-align: center;
+  opacity: 0;
+}
+
+.winAnimation {
+  animation: winEffect 1s ease-in-out forwards;
+  font-size: 30px;
+}
+
+@keyframes winEffect {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.loseAnimation {
+  animation: loseEffect 1.5s ease-in-out forwards;
+  font-size: 30px;
+}
+
+@keyframes loseEffect {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.tieAnimation {
+  animation: shakeEffect 0.5s ease-in-out 3; /* 3 time shake */
+  color: blue;
+  font-size: 30px;
+}
+
+@keyframes shakeEffect {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  30% {
+    transform: translateX(5px);
+  }
+  45% {
+    transform: translateX(-5px);
+  }
+  
+}
+
+.blinkAnimation {
+  animation: blinkEffect 1s ease-in-out 3; /* 3 time light and close */
+}
+
+@keyframes blinkEffect {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@media (max-width: 768px) {
+  body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url(https://64.media.tumblr.com/tumblr_m3onvwQKgo1rqs8i3o1_500.gif);
+    background-repeat: no-repeat;
+   background-size: cover;
+  }
+ 
+    
+  .choices{
+    display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 15px; 
+  margin-top: 20px; 
+  }
+  .choices button {
+    width: 80px; 
+    height: 80px; 
+    font-size: 50px; 
+  }
+   h1 {
+    font-size: 1.5rem;
+    justify-content: center;
+  }
+
+  .scoreDisplay {
+    font-size: 20px;
+   
+  }
+
+
+  .winAnimation,
+  .loseAnimation,
+  .tieAnimation {
+    font-size: 30px !important; 
+    background-color: rgb(237, 233, 140);
+    border: solid gray;
+    border-radius: 15px;
+   
+
+  }
+
+  @keyframes winEffect {
+    0% {
+      transform: scale(0.3); 
+      opacity: 0;
+      filter: blur(5px); 
+    }
+    100% {
+      transform: scale(0.8); /* Daha küçük ölçek */
+      opacity: 1;
+      filter: blur(0px);
+    }
+  }
+
+  @keyframes loseEffect {
+    0% {
+      transform: translateY(-50px); /* Daha az yer değiştirme */
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes shakeEffect {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px); /* Daha az sallanma */
+    }
+    30% {
+      transform: translateX(5px);
+    }
+    45% {
+      transform: translateX(-5px);
+    }
+  }
+}
+
+   
+    
+ 
